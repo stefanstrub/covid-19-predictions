@@ -45,30 +45,33 @@ class data:
                     continue
                 if len(arguments) != length:#because of names with "," in them
                     continue#just ignoring all the names with ","
+                    
+                if str(arguments[countryIndex]) in countryList:
+                    provinceList = []
+                    for coun in self.countries:
+                        if coun.name == arguments[countryIndex]:
+                            provinceList.append(coun.province)
 
-                if str(arguments[countryIndex]) in countryList and self.countries[countryList.index(str(arguments[countryIndex]))].province == arguments[provinceIndex]:
-                    index = countryList.index(str(arguments[countryIndex]))
-                    self.countries[index].setDay(arguments[dateIndex], arguments[confirmedIndex], arguments[deathsIndex], arguments[recoveredIndex])
-                    
-                if str(arguments[countryIndex]) not in countryList:
+                    if arguments[provinceIndex] not in provinceList:
+                        countryList.append(str(arguments[countryIndex]))
+                        newCountry = country(arguments[countryIndex])
+                        newCountry.setProvince(arguments[provinceIndex])
+                        newCountry.setDay(arguments[dateIndex], arguments[confirmedIndex], arguments[deathsIndex], arguments[recoveredIndex])
+                        self.countries.append(newCountry)
+                        #print(arguments[dateIndex])
+                    if arguments[provinceIndex] in provinceList:
+                        for coun in self.countries:
+                            if coun.province == arguments[provinceIndex] and coun.name == arguments[countryIndex]:
+                                coun.setDay(arguments[dateIndex], arguments[confirmedIndex], arguments[deathsIndex], arguments[recoveredIndex])
+
+                if str(arguments[countryIndex]) not in countryList:   
                     countryList.append(str(arguments[countryIndex]))
                     newCountry = country(arguments[countryIndex])
                     newCountry.setProvince(arguments[provinceIndex])
                     newCountry.setDay(arguments[dateIndex], arguments[confirmedIndex], arguments[deathsIndex], arguments[recoveredIndex])
                     self.countries.append(newCountry)
                     #print(arguments[dateIndex])
-                if str(arguments[countryIndex]) in countryList and self.countries[countryList.index(str(arguments[countryIndex]))].province != arguments[provinceIndex]:
-                    countryList.append(str(arguments[countryIndex]))
-                    newCountry = country(arguments[countryIndex])
-                    newCountry.setProvince(arguments[provinceIndex])
-                    newCountry.setDay(arguments[dateIndex], arguments[confirmedIndex], arguments[deathsIndex], arguments[recoveredIndex])
-                    self.countries.append(newCountry)
-                    #print(arguments[dateIndex])
-                    
-                    
-                    
-                    
-                    
+                
                     
         self.findEarliestDate()
         for coun in self.countries:
@@ -144,6 +147,7 @@ class country:
         self.days = []
         self.earliestDate = 0
         self.firstDay = 0
+
 
     def setProvince(self, province=None):
         self.province = province
@@ -226,7 +230,7 @@ if __name__ == '__main__':
     print("========================")
     print("Start the datathon.")
 
-    newAnalysis = data("C:/Users/loebn/OneDrive/Desktop/Code/Datathon/data/")
+    newAnalysis = data("C:/Users/loebn/OneDrive/Desktop/Code/Datathon/data/") #just make here the path to the data folder
     newAnalysis.initializeIt()
     
     countryToInvestigate = "Switzerland"
@@ -234,6 +238,10 @@ if __name__ == '__main__':
     
     print("Number of Countries/provinces: " + str(len(newAnalysis.countries)))
     print("Country to investigate: " + str(countryToInvestigate))
+    for coun in (newAnalysis.countries):
+        if "Switzerland" == coun.name:
+            print(coun.province)
+    
     
     newAnalysis.plotIt("confirmed", countryToInvestigate, province) 
     newAnalysis.plotIt("deaths", countryToInvestigate, province) 
