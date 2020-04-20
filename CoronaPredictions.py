@@ -648,8 +648,8 @@ if __name__ == '__main__':
     
     
     path2 = 'predictions'+r'\2day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+2]+'.csv'
-    path7 = 'predictions'+r'\2day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+7]+'.csv'
-    path30 = 'predictions'+r'\2day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+30]+'.csv'
+    path7 = 'predictions'+r'\7day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+7]+'.csv'
+    path30 = 'predictions'+r'\30day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+30]+'.csv'
     
     newPrediction.saveInDesiredFormat(confirmed_and_predicted, deaths_and_predicted, recovered_and_predicted,path2, path7, path30)
     
