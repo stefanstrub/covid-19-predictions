@@ -3,7 +3,7 @@
 """
 Created on Sun Apr 19 10:01:21 2020
 
-@author: loebn
+@author: loebn and Stefan Strub
 """
 
 
@@ -83,7 +83,7 @@ class Data:
         return df
     
     def saveInDesiredFormat(self, confirmed_and_predicted, deaths_and_predicted, recovered_and_predicted, path2, path7, path30):
-        confirmed_and_predicted = confirmed_and_predicted.T
+        confirmed_and_predicted = confirmed_and_predicted.T.astype(int)
         confirmed_and_predicted['Country'] = confirmed_and_predicted.index
         confirmed_and_predicted = confirmed_and_predicted.reset_index()
         confirmed_and_predicted = confirmed_and_predicted.drop('index',1)
@@ -92,7 +92,7 @@ class Data:
         cols = cols[-1:] + cols[:-1]
         confirmed_and_predicted = confirmed_and_predicted[cols]
         
-        deaths_and_predicted = deaths_and_predicted.T
+        deaths_and_predicted = deaths_and_predicted.T.astype(int)
         deaths_and_predicted['Country'] = deaths_and_predicted.index
         deaths_and_predicted = deaths_and_predicted.reset_index()
         deaths_and_predicted = deaths_and_predicted.drop('index',1)
@@ -101,7 +101,7 @@ class Data:
         cols = cols[-1:] + cols[:-1]
         deaths_and_predicted = deaths_and_predicted[cols]
         
-        recovered_and_predicted = recovered_and_predicted.T
+        recovered_and_predicted = recovered_and_predicted.T.astype(int)
         recovered_and_predicted['Country'] = recovered_and_predicted.index
         recovered_and_predicted = recovered_and_predicted.reset_index()
         recovered_and_predicted = recovered_and_predicted.drop('index',1)
@@ -118,7 +118,6 @@ class Data:
         
         
         
-        print(self.df['date'])
         self.x_date = []
         for i in range(self.length):
             self.x_date.append(datetime.datetime(2020, 1, 22)+ datetime.timedelta(days=i) )
@@ -128,22 +127,20 @@ class Data:
         # t2
         n = 2
         ###################################path2 = r'C:\Users\stefa\OneDrive\Documents\Machine Learning\Covid-19 predictions\predictions'+r'\2day_prediction_'+x_date[len(df['date'])+n]+'.csv'
-        t2_prediction = pd.DataFrame(data={'Province/State': np.nan, 'Country': self.countries,'Target/Date': self.x_date[len(self.df['date'])+n],'N': confirmed_and_predicted.iloc[:,len(self.date)+n+1], 'D': deaths_and_predicted.iloc[:,len(self.date)+n+1], 'R': recovered_and_predicted.iloc[:,len(self.date)+n+1]})
-        print(self.x_date[len(self.df['date'])])
-        print(len(self.date))
-        print(t2_prediction)
+        t2_prediction = pd.DataFrame(data={'Province/State': np.nan, 'Country': self.countries,'Target/Date': self.x_date[len(self.df['date'])+n-1],'N': confirmed_and_predicted.iloc[:,len(self.date)+n], 'D': deaths_and_predicted.iloc[:,len(self.date)+n], 'R': recovered_and_predicted.iloc[:,len(self.date)+n]})
+
         t2_prediction.to_csv(path2, index=False)
         # t7
         n = 7
         ###################################path7 = r'C:\Users\stefa\OneDrive\Documents\Machine Learning\Covid-19 predictions\predictions'+r'\7day_prediction_'+x_date[len(df['date'])+n]+'.csv'
-        t7_prediction = pd.DataFrame(data={'Province/State': np.nan, 'Country': self.countries,'Target/Date': self.x_date[len(self.df['date'])+n],'N': confirmed_and_predicted.iloc[:,len(self.date)+n+1], 'D': deaths_and_predicted.iloc[:,len(self.date)+n+1], 'R': recovered_and_predicted.iloc[:,len(self.date)+n+1]})
-        print(t7_prediction)
+        t7_prediction = pd.DataFrame(data={'Province/State': np.nan, 'Country': self.countries,'Target/Date': self.x_date[len(self.df['date'])+n-1],'N': confirmed_and_predicted.iloc[:,len(self.date)+n], 'D': deaths_and_predicted.iloc[:,len(self.date)+n], 'R': recovered_and_predicted.iloc[:,len(self.date)+n]})
+
         t7_prediction.to_csv(path7, index=False)
         # t30
         n = 30
         ###################################path30 = r'C:\Users\stefa\OneDrive\Documents\Machine Learning\Covid-19 predictions\predictions'+r'\30day_prediction_'+x_date[len(df['date'])+n]+'.csv'
-        t30_prediction = pd.DataFrame(data={'Province/State': np.nan,'Country': self.countries,'Target/Date': self.x_date[len(self.df['date'])+n],'N': confirmed_and_predicted.iloc[:,len(self.date)+n+1], 'D': deaths_and_predicted.iloc[:,len(self.date)+n+1], 'R': recovered_and_predicted.iloc[:,len(self.date)+n+1]})
-        print(t30_prediction)
+        t30_prediction = pd.DataFrame(data={'Province/State': np.nan,'Country': self.countries,'Target/Date': self.x_date[len(self.df['date'])+n-1],'N': confirmed_and_predicted.iloc[:,len(self.date)+n], 'D': deaths_and_predicted.iloc[:,len(self.date)+n], 'R': recovered_and_predicted.iloc[:,len(self.date)+n]})
+
         t30_prediction.to_csv(path30, index=False)
         
         
@@ -412,22 +409,19 @@ class Prediction(Data):
     
         # Plot posterior. --------------------------------------------------
         
-        plt.pcolor(self.mortalities,self.delta,p, cmap=plt.cm.get_cmap('binary'))
-        plt.xlabel(r'mortalities')
-        plt.ylabel(r'death latency')
-        plt.colorbar()
-        plt.title('posterior probability density')
-        plt.grid()
-        plt.show()
+# =============================================================================
+#         plt.pcolor(self.mortalities,self.delta,p, cmap=plt.cm.get_cmap('binary'))
+#         plt.xlabel(r'mortalities')
+#         plt.ylabel(r'death latency')
+#         plt.colorbar()
+#         plt.title('posterior probability density')
+#         plt.grid()
+#         plt.show()
+# =============================================================================
         
         death_latency_index, mortality_index = np.where(p == np.amax(p))
         self.death_latency, self.mortality = int(self.delta[death_latency_index]), self.mortalities[mortality_index]
-        print(self.death_latency, self.mortality)
-        print(self.deaths[-1])
-        print(self.death_latency)
-        print(self.prediction_length)
-        print(confirmed_and_predicted_array[-self.death_latency-self.prediction_length])
-        print(self.deaths[-1]/confirmed_and_predicted_array[-self.death_latency-self.prediction_length])
+
         
         return self.death_latency, self.mortality    
     
@@ -633,7 +627,7 @@ class Prediction(Data):
 if __name__ == '__main__':
     print("========================")
     print("========================")
-    print("Start the CodeWithClass.")
+    print("Start predicting the development of the corona virus.")
     
     
     confirmedFile = "time_series_covid19_confirmed_global.csv"
@@ -647,9 +641,9 @@ if __name__ == '__main__':
     recovered_and_predicted = newPrediction.makeRecoveredPrediction(PredictionLength)
     
     
-    path2 = 'predictions'+r'\2day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+2]+'.csv'
-    path7 = 'predictions'+r'\7day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+7]+'.csv'
-    path30 = 'predictions'+r'\30day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+30]+'.csv'
+    path2 = 'predictions'+r'\2day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+2-1]+'.csv'
+    path7 = 'predictions'+r'\7day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+7-1]+'.csv'
+    path30 = 'predictions'+r'\30day_prediction_'+newPrediction.x_date_str[len(newPrediction.df['date'])+30-1]+'.csv'
     
     newPrediction.saveInDesiredFormat(confirmed_and_predicted, deaths_and_predicted, recovered_and_predicted,path2, path7, path30)
     
@@ -657,6 +651,6 @@ if __name__ == '__main__':
     
     
     
-    print("End the CodeWithClass.")
+    print("End")
     print("========================")
     print("========================")
