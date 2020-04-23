@@ -287,8 +287,9 @@ class Prediction(Data):
         self.curveFit()
         exp_function = lambda t,a,b: a*np.exp(b*t)
         new_cases_averaged_prediction = exp_function(np.arange(0,self.prediction_length+self.fit_length),self.new_cases_averaged_p_exp[0],self.new_cases_averaged_p_exp[1])
-        
-        
+
+        if country == 'Italy':
+            print(self.new_cases_averaged)
         
         for i in range(len(new_cases_averaged_prediction)-self.fit_length):
             if new_cases_averaged_prediction[i+self.fit_length] < new_cases_averaged_prediction[0+self.fit_length]/10:
@@ -303,7 +304,13 @@ class Prediction(Data):
         
         for i in range(len(new_cases_and_prediction)-self.average_length):
             new_cases_and_prediction[i+self.average_length] = new_cases_and_averaged_prediction[i+self.average_length]*self.average_length-np.sum(new_cases_and_prediction[i+1:i+self.average_length])
-    
+        
+        if country == 'Italy':
+            print(self.new_cases_averaged_p_exp)
+            print(self.new_cases_averaged)
+            print(self.new_cases)
+            print(new_cases_and_prediction)
+            
         #comupte a center average of the new cases and the predicted new cases
         new_cases_and_prediction_center_averaged = np.zeros(len(new_cases_and_prediction)-int((self.center_average_length-1)/2)-1)
         for i in range(len(new_cases_and_prediction)-self.center_average_length):
@@ -319,18 +326,20 @@ class Prediction(Data):
                 
         self.confirmed_predicted = confirmed_predicted.astype(int)
     
-        """
-        fig, ax = plt.subplots()
-        plt.plot(x_date[1:len(date)],new_cases,'o')
-        plt.plot(x_date[1:len(date)],new_cases_averaged,'o')
-        plt.plot(x_date[len(date)-fit_length:len(date)+prediction_length],new_cases_averaged_prediction,'r.')
-        plt.plot(x_date[0:len(new_cases_and_prediction)],new_cases_and_prediction,'.')
-        #plt.plot(x_date[len(date)-fit_length:len(date)],np.exp(np.polyval(new_cases_averaged_p_exp, np.arange(0,fit_length))),'.')
-        plt.xlabel('date')
-        plt.ylabel('new cases averaged past '+ str(average_length)+' days')
-        plt.title(country)
-        plt.xticks(rotation='vertical')
-        plt.show()"""
+        
+# =============================================================================
+#         fig, ax = plt.subplots()
+#         plt.plot(self.x_date[1:len(self.date)],self.new_cases,'o')
+#         plt.plot(self.x_date[1:len(self.date)],self.new_cases_averaged,'o')
+#         plt.plot(self.x_date[len(self.date)-self.fit_length:len(self.date)+self.prediction_length],new_cases_averaged_prediction,'r.')
+#         plt.plot(self.x_date[0:len(new_cases_and_prediction)],new_cases_and_prediction,'.')
+#         #plt.plot(x_date[len(date)-fit_length:len(date)],np.exp(np.polyval(new_cases_averaged_p_exp, np.arange(0,fit_length))),'.')
+#         plt.xlabel('date')
+#         plt.ylabel('new cases averaged past '+ str(self.average_length)+' days')
+#         plt.title(country)
+#         plt.xticks(rotation='vertical')
+#         plt.show()
+# =============================================================================
         
         return self.confirmed_predicted, self.confirmed
     
@@ -446,7 +455,7 @@ class Prediction(Data):
             
         index_of_today = len(self.df['date'])
         
-        new_deaths_predicted = self.new_cases[index_of_today-self.death_latency:]*self.mortality
+        new_deaths_predicted = self.new_cases_averaged[index_of_today-self.death_latency:]*self.mortality
         
         deaths_predicted = np.zeros(self.prediction_length)
         for i in range(self.prediction_length):
@@ -462,19 +471,22 @@ class Prediction(Data):
             self.new_cases_manipulated_summed[i+1] = self.new_cases_manipulated_summed[i] + new_cases_manipulated[i+1]
     
         self.deaths_predicted = deaths_predicted.astype(int)
+        if country == 'Switzerland':
+            fig = plt.figure()
+            plt.plot(self.x_date[1:len(self.new_deaths)+1],self.new_deaths,'.',label='new deaths')
+            plt.plot(self.x_date[1:len(self.new_deaths_averaged)+1],self.new_deaths_averaged,'.',label='new deaths averaged')
+            plt.plot(self.x_date[1:len(self.new_cases_averaged)+1],self.new_cases_averaged,'.',label='new cases averaged')
+            plt.plot(self.x_date[1:len(self.new_cases)+1],self.new_cases,'.',label='new cases')
+            plt.plot(self.x_date[1:len(new_cases_manipulated)],new_cases_manipulated[:-1],'.',label='new cases manipulated')
+                #plt.plot(x_date[1:len(new_cases_manipulated)+1],new_cases_manipulated,'.',label='new cases manipulated')
+            plt.xlabel('date')
+            plt.ylabel('new deaths')
+            plt.xticks(rotation='vertical')
+            plt.grid(True)
+            plt.legend()
+            plt.title(country)
+            plt.show() 
         """
-        fig = plt.figure()
-        plt.plot(x_date[1:len(new_deaths)+1],new_deaths,'.',label='new deaths')
-        plt.plot(x_date[1:len(new_deaths_averaged)+1],new_deaths_averaged,'.',label='new deaths averaged')
-        #plt.plot(x_date[1:len(new_cases_manipulated)+1],new_cases_manipulated,'.',label='new cases manipulated')
-        plt.xlabel('date')
-        plt.ylabel('new deaths')
-        plt.xticks(rotation='vertical')
-        plt.grid(True)
-        plt.legend()
-        plt.title(country)
-        plt.show() 
-        
         fig = plt.figure()
         plt.plot(x_date[1:len(new_cases)+1],new_cases,'.',label='new cases')
         plt.plot(x_date[1:len(new_cases_averaged)+1],new_cases_averaged,'.',label='new cases averaged')
