@@ -1,0 +1,267 @@
+Province/State,Country,Target/Date,N,D,R
+,Afghanistan,2020-05-11,5456,150,812
+,Albania,2020-05-11,823,36,748
+,Algeria,2020-05-11,6081,526,2294
+,Andorra,2020-05-11,751,45,701
+,Angola,2020-05-11,81,2,33
+,Antigua and Barbuda,2020-05-11,30,3,33
+,Argentina,2020-05-11,5405,314,1616
+,Armenia,2020-05-11,3679,74,1188
+Australian Capital Territory,Australia,2020-05-11,107,3,104
+New South Wales,Australia,2020-05-11,3054,45,2366
+Northern Territory,Australia,2020-05-11,29,0,24
+Queensland,Australia,2020-05-11,1051,6,1021
+South Australia,Australia,2020-05-11,438,4,433
+Tasmania,Australia,2020-05-11,227,13,179
+Victoria,Australia,2020-05-11,1694,20,1333
+Western Australia,Australia,2020-05-11,551,9,547
+,Austria,2020-05-11,15868,623,13816
+,Azerbaijan,2020-05-11,2371,42,1708
+,Bahamas,2020-05-11,83,11,26
+,Bahrain,2020-05-11,3944,52,2411
+,Bangladesh,2020-05-11,16031,404,3031
+,Barbados,2020-05-11,82,7,48
+,Belarus,2020-05-11,24581,459,5258
+,Belgium,2020-05-11,51742,8502,13644
+,Benin,2020-05-11,277,3,80
+,Bhutan,2020-05-11,7,0,5
+,Bolivia,2020-05-11,2540,113,288
+,Bosnia and Herzegovina,2020-05-11,2345,98,971
+,Brazil,2020-05-11,157357,9580,72089
+,Brunei,2020-05-11,138,1,132
+,Bulgaria,2020-05-11,1822,97,529
+,Burkina Faso,2020-05-11,689,47,605
+,Cabo Verde,2020-05-11,355,5,136
+,Cambodia,2020-05-11,122,0,120
+,Cameroon,2020-05-11,2345,92,977
+Alberta,Canada,2020-05-11,6568,186,40108
+British Columbia,Canada,2020-05-11,2349,131,40108
+Grand Princess,Canada,2020-05-11,13,0,40108
+Manitoba,Canada,2020-05-11,289,6,40108
+New Brunswick,Canada,2020-05-11,118,0,40108
+Newfoundland and Labrador,Canada,2020-05-11,259,3,40108
+Nova Scotia,Canada,2020-05-11,1014,44,40108
+Ontario,Canada,2020-05-11,21868,1732,40108
+Prince Edward Island,Canada,2020-05-11,27,0,40108
+Quebec,Canada,2020-05-11,46953,2990,40108
+Saskatchewan,Canada,2020-05-11,631,11,40108
+,Central African Republic,2020-05-11,231,2,10
+,Chad,2020-05-11,488,13,93
+,Chile,2020-05-11,41137,596,13980
+Anhui,China,2020-05-11,991,6,985
+Beijing,China,2020-05-11,593,9,585
+Chongqing,China,2020-05-11,579,6,573
+Fujian,China,2020-05-11,362,1,353
+Gansu,China,2020-05-11,139,2,137
+Guangdong,China,2020-05-11,1588,8,1579
+Guangxi,China,2020-05-11,254,2,252
+Guizhou,China,2020-05-11,147,2,145
+Hainan,China,2020-05-11,168,6,162
+Hebei,China,2020-05-11,328,6,320
+Heilongjiang,China,2020-05-11,945,13,800
+Henan,China,2020-05-11,1276,22,1254
+Hong Kong,China,2020-05-11,1040,4,955
+Hubei,China,2020-05-11,68128,4512,63616
+Hunan,China,2020-05-11,1019,4,1015
+Inner Mongolia,China,2020-05-11,201,1,174
+Jiangsu,China,2020-05-11,653,0,655
+Jiangxi,China,2020-05-11,937,1,936
+Jilin,China,2020-05-11,112,1,119
+Liaoning,China,2020-05-11,146,2,148
+Macau,China,2020-05-11,45,0,48
+Ningxia,China,2020-05-11,75,0,75
+Qinghai,China,2020-05-11,18,0,18
+Shaanxi,China,2020-05-11,314,4,284
+Shandong,China,2020-05-11,790,7,776
+Shanghai,China,2020-05-11,680,7,647
+Shanxi,China,2020-05-11,200,0,207
+Sichuan,China,2020-05-11,561,3,558
+Tianjin,China,2020-05-11,190,3,186
+Tibet,China,2020-05-11,1,0,1
+Xinjiang,China,2020-05-11,76,3,73
+Yunnan,China,2020-05-11,185,2,181
+Zhejiang,China,2020-05-11,1268,1,1270
+,Colombia,2020-05-11,11452,483,2559
+,Congo (Brazzaville),2020-05-11,276,11,49
+,Congo (Kinshasa),2020-05-11,1367,46,130
+,Costa Rica,2020-05-11,828,8,494
+,Cote d'Ivoire,2020-05-11,1645,32,803
+,Croatia,2020-05-11,2121,84,1869
+,Diamond Princess,2020-05-11,712,13,645
+,Cuba,2020-05-11,1950,84,1302
+,Cyprus,2020-05-11,931,18,603
+,Czechia,2020-05-11,8082,276,4627
+Faroe Islands,Denmark,2020-05-11,187,0,203
+Greenland,Denmark,2020-05-11,11,0,11
+,Denmark,2020-05-11,10369,551,0
+,Djibouti,2020-05-11,1192,7,851
+,Dominican Republic,2020-05-11,11553,444,2474
+,Ecuador,2020-05-11,32339,2004,8763
+,Egypt,2020-05-11,9714,543,2025
+,El Salvador,2020-05-11,928,23,358
+,Equatorial Guinea,2020-05-11,319,9,13
+,Eritrea,2020-05-11,39,0,35
+,Estonia,2020-05-11,1720,59,267
+,Eswatini,2020-05-11,153,4,13
+,Ethiopia,2020-05-11,147,3,109
+,Fiji,2020-05-11,18,0,15
+,Finland,2020-05-11,5847,279,3652
+French Guiana,France,2020-05-11,138,2,113
+French Polynesia,France,2020-05-11,59,0,56
+Guadeloupe,France,2020-05-11,162,12,113
+Mayotte,France,2020-05-11,1177,18,410
+New Caledonia,France,2020-05-11,18,0,17
+Reunion,France,2020-05-11,426,0,300
+Saint Barthelemy,France,2020-05-11,6,0,6
+St Martin,France,2020-05-11,38,3,29
+Martinique,France,2020-05-11,181,14,84
+,France,2020-05-11,170010,25527,0
+,Gabon,2020-05-11,800,14,189
+,Gambia,2020-05-11,46,1,9
+,Georgia,2020-05-11,722,15,296
+,Germany,2020-05-11,170283,7459,147244
+,Ghana,2020-05-11,3635,68,350
+,Greece,2020-05-11,2675,152,5386
+,Guatemala,2020-05-11,882,31,91
+,Guinea,2020-05-11,2265,42,802
+,Guyana,2020-05-11,95,9,36
+,Haiti,2020-05-11,117,11,11
+,Holy See,2020-05-11,15,0,2
+,Honduras,2020-05-11,3267,104,196
+,Hungary,2020-05-11,3421,378,686
+,Iceland,2020-05-11,1801,10,1769
+,India,2020-05-11,69700,2417,21523
+,Indonesia,2020-05-11,13717,1000,3579
+,Iran,2020-05-11,104320,6676,85550
+,Iraq,2020-05-11,3123,124,1871
+,Ireland,2020-05-11,22707,1491,17538
+,Israel,2020-05-11,16517,288,13314
+,Italy,2020-05-11,220460,29818,98845
+,Jamaica,2020-05-11,552,17,67
+,Japan,2020-05-11,15457,624,13178
+,Jordan,2020-05-11,477,9,388
+,Kazakhstan,2020-05-11,5872,96,1810
+,Kenya,2020-05-11,709,29,240
+,"Korea, South",2020-05-11,10854,257,9428
+,Kuwait,2020-05-11,8225,145,2994
+,Kyrgyzstan,2020-05-11,919,16,797
+,Latvia,2020-05-11,934,20,357
+,Lebanon,2020-05-11,755,26,447
+,Liberia,2020-05-11,188,20,102
+,Liechtenstein,2020-05-11,82,1,55
+,Lithuania,2020-05-11,1418,45,749
+,Luxembourg,2020-05-11,3899,102,3421
+,Madagascar,2020-05-11,248,0,118
+,Malaysia,2020-05-11,7144,132,4891
+,Maldives,2020-05-11,1133,19,18
+,Malta,2020-05-11,539,5,459
+,Mauritania,2020-05-11,8,1,6
+,Mauritius,2020-05-11,332,10,318
+,Mexico,2020-05-11,37685,2766,15744
+,Moldova,2020-05-11,4598,179,1824
+,Monaco,2020-05-11,95,4,128
+,Mongolia,2020-05-11,40,0,12
+,Montenegro,2020-05-11,323,8,366
+,Morocco,2020-05-11,5802,229,3939
+,Namibia,2020-05-11,16,0,8
+,Nepal,2020-05-11,173,0,16
+Aruba,Netherlands,2020-05-11,100,2,97
+Curacao,Netherlands,2020-05-11,16,1,15
+Sint Maarten,Netherlands,2020-05-11,76,13,70
+,Netherlands,2020-05-11,42112,5243,0
+,New Zealand,2020-05-11,1494,21,1332
+,Nicaragua,2020-05-11,15,5,7
+,Niger,2020-05-11,816,39,625
+,Nigeria,2020-05-11,5848,162,697
+,North Macedonia,2020-05-11,1582,93,1665
+,Norway,2020-05-11,8125,232,32
+,Oman,2020-05-11,3063,47,2548
+,Pakistan,2020-05-11,31490,849,10343
+,Panama,2020-05-11,8354,280,953
+,Papua New Guinea,2020-05-11,8,0,8
+,Paraguay,2020-05-11,1229,17,161
+,Peru,2020-05-11,75277,2377,33806
+,Philippines,2020-05-11,11529,717,1701
+,Poland,2020-05-11,15408,825,6168
+,Portugal,2020-05-11,26133,1105,2220
+,Qatar,2020-05-11,21250,321,2604
+,Romania,2020-05-11,15361,943,8780
+,Russia,2020-05-11,235941,4402,43513
+,Rwanda,2020-05-11,315,4,276
+,Saint Lucia,2020-05-11,24,0,15
+,Saint Vincent and the Grenadines,2020-05-11,17,0,9
+,San Marino,2020-05-11,607,44,182
+,Saudi Arabia,2020-05-11,39996,729,8395
+,Senegal,2020-05-11,1980,38,583
+,Serbia,2020-05-11,10731,282,2147
+,Seychelles,2020-05-11,11,0,6
+,Singapore,2020-05-11,22136,297,1930
+,Slovakia,2020-05-11,1413,28,894
+,Slovenia,2020-05-11,1461,99,254
+,Somalia,2020-05-11,1025,51,169
+,South Africa,2020-05-11,11152,257,4478
+,Spain,2020-05-11,274882,25952,137848
+,Sri Lanka,2020-05-11,840,21,375
+,Sudan,2020-05-11,1585,61,135
+,Suriname,2020-05-11,10,1,9
+,Sweden,2020-05-11,25395,3343,4075
+,Switzerland,2020-05-11,30460,1839,28089
+,Taiwan*,2020-05-11,463,6,356
+,Tanzania,2020-05-11,626,26,229
+,Thailand,2020-05-11,2992,58,2776
+,Togo,2020-05-11,162,10,75
+,Trinidad and Tobago,2020-05-11,116,8,159
+,Tunisia,2020-05-11,1072,46,535
+,Turkey,2020-05-11,138860,4359,116462
+,Uganda,2020-05-11,100,0,59
+,Ukraine,2020-05-11,15688,493,2349
+,United Arab Emirates,2020-05-11,18804,357,3740
+Bermuda,United Kingdom,2020-05-11,116,7,77
+Cayman Islands,United Kingdom,2020-05-11,75,1,14
+Channel Islands,United Kingdom,2020-05-11,546,42,452
+Gibraltar,United Kingdom,2020-05-11,145,0,133
+Isle of Man,United Kingdom,2020-05-11,392,23,280
+Montserrat,United Kingdom,2020-05-11,11,1,15
+,United Kingdom,2020-05-11,228964,30645,0
+,Uruguay,2020-05-11,675,20,491
+,US,2020-05-11,1357926,81350,331790
+,Uzbekistan,2020-05-11,2431,26,1805
+,Venezuela,2020-05-11,366,11,177
+,Vietnam,2020-05-11,271,0,218
+,Zambia,2020-05-11,222,5,216
+,Zimbabwe,2020-05-11,36,4,8
+Diamond Princess,Canada,2020-05-11,6,1,40108
+,Dominica,2020-05-11,16,0,13
+,Grenada,2020-05-11,22,0,17
+,Mozambique,2020-05-11,80,0,44
+,Syria,2020-05-11,46,3,40
+,Timor-Leste,2020-05-11,24,0,56
+,Belize,2020-05-11,18,2,29
+Recovered,Canada,2020-05-11,0,0,40108
+,Laos,2020-05-11,19,0,10
+,Libya,2020-05-11,66,3,33
+,West Bank and Gaza,2020-05-11,361,0,101
+,Guinea-Bissau,2020-05-11,817,14,34
+,Mali,2020-05-11,726,39,575
+,Saint Kitts and Nevis,2020-05-11,15,0,23
+Northwest Territories,Canada,2020-05-11,5,0,40108
+Yukon,Canada,2020-05-11,11,0,40108
+,Kosovo,2020-05-11,873,32,1305
+,Burma,2020-05-11,161,6,148
+Anguilla,United Kingdom,2020-05-11,3,0,4
+British Virgin Islands,United Kingdom,2020-05-11,6,1,3
+Turks and Caicos Islands,United Kingdom,2020-05-11,12,1,7
+,MS Zaandam,2020-05-11,9,2,0
+,Botswana,2020-05-11,23,1,29
+,Burundi,2020-05-11,29,1,16
+,Sierra Leone,2020-05-11,378,12,110
+"Bonaire, Sint Eustatius and Saba",Netherlands,2020-05-11,11,0,0
+,Malawi,2020-05-11,41,3,17
+Falkland Islands (Malvinas),United Kingdom,2020-05-11,13,0,13
+Saint Pierre and Miquelon,France,2020-05-11,1,0,0
+,South Sudan,2020-05-11,127,1,0
+,Western Sahara,2020-05-11,6,0,5
+,Sao Tome and Principe,2020-05-11,72,3,7
+,Yemen,2020-05-11,54,2,1
+,Comoros,2020-05-11,16,0,0
+,Tajikistan,2020-05-11,656,8,0
